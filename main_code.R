@@ -119,10 +119,22 @@ payable[, income_post := income + tax_payable]
 payable[, marginal := -1 * (tax_payable - shift(tax_payable)) / (income - shift(income))]
 payable[, average := -1 * tax_payable / income]
 
+## Graphs
+
+# Graph marginal tax rate
 graph <-
   ggplot(data = payable) +
   geom_line(aes(x = income, y = marginal))
 
 plotly_graph <- ggplotly(graph)
 
-htmlwidgets::saveWidget(plotly_graph, file = "plotly_graph.html")
+htmlwidgets::saveWidget(plotly_graph, file = "Marginal tax rate graph.html")
+
+# Graph before and after tax income
+graph <-
+  ggplot(data = payable) +
+  geom_line(aes(x = income, y = income_post))
+
+plotly_graph <- ggplotly(graph)
+
+htmlwidgets::saveWidget(plotly_graph, file = "Pre and post-tax income.html")
