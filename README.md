@@ -9,3 +9,5 @@ Calculates effective marginal tax rates on individual incomes in Australia. Curr
 * Superannuation contribution taxes
 
 Does not include any effective marginal rates created by mean-tested Centrelink payments, childcare benefits, etc.
+
+Last updated for the 2021-22 financial year.
